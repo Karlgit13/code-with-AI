@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# env var
+.env
+/express-backend/.env
+
 # production
 /build
 
