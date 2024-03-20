@@ -1,15 +1,15 @@
 const express = require('express');
-const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config();
+const { OpenAI } = require('openai');
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
 
-const configuration = new Configuration({
+const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 app.post('/generate-exercise', async (req, res) => {
     try {
@@ -26,7 +26,7 @@ app.post('/generate-exercise', async (req, res) => {
 });
 
 app.post('/verify-exercise', async (req, res) => {
-    // Logiken här skulle behöva anpassas baserat på övningstyp och vad som ska verifieras
+    // Här skulle din logik för att verifiera övningarna komma in
 });
 
 app.listen(port, () => {

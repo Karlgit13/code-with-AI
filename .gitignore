@@ -11,6 +11,7 @@
 # env var
 .env
 /express-backend/.env
+/express-backend/node_modules
 
 # production
 /build
